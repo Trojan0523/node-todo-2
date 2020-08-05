@@ -1,0 +1,10 @@
+{
+  "name": "node-todo-2",
+  "version": "0.0.1",
+  "main": "cli.js",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^6.0.0",
+    "inquirer": "^7.3.3"
+  }
+}
