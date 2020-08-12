@@ -1,14 +1,17 @@
-const {program} = require('commander');
+#!/usr/bin/env node
+const program = require('commander');
 const api = require('./index.js');
+const pkg = require('./package.json')
 
 program
-    .option('-x, --xxx', 'what the x')
+    .version(pkg.version)
+
 program
     .command('add')
     .description('add a task')
     .action((...args) => {
-        const words = args.slice(0, -1).join('')
-        api.add(words).then(() => {console.log('添加成功'),() => {console.log('添加失败')}})
+        const words = args.slice(0, -1).join(' ')
+        api.add(words).then(()=> {console.log('添加成功')},()=> {console.log('添加失败')})
     });
 program
     .command('clear')
